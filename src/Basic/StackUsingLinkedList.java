@@ -2,11 +2,11 @@ package Basic;
 
 class Node{
 	int data;
-	Node ref;
+	Node next;
 	
 	Node(int data){
 		this.data = data;
-		this.ref = null ;
+		this.next = null ;
 	}
 }
 
@@ -15,9 +15,18 @@ class StackLinkedList{
 	
 	public void push(int val) {
 		Node newNode = new Node(val);
-		newNode.ref = top;
+		newNode.next= top;
 		top = newNode;
 		System.out.println("Node element sucessfully ");
+	}
+	
+	public void pop() {
+		if(top == null) {
+			System.out.println("Stack is Empty ");
+		}else {
+			System.out.println("Element deleted sucessfully, Deleted element: "+ top.data);
+			top = top.next;
+		}
 	}
 }
 public class StackUsingLinkedList {
@@ -26,6 +35,7 @@ public class StackUsingLinkedList {
 		
 		StackLinkedList stack = new StackLinkedList();
 		stack.push(11);
+		stack.pop();
 	}
 
 }
