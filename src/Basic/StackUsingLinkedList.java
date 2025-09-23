@@ -16,8 +16,10 @@ class StackLinkedList{
 	public void push(int val) {
 		Node newNode = new Node(val);
 		newNode.next= top;
+		System.out.println(newNode.next);
 		top = newNode;
-		System.out.println("Node element sucessfully ");
+		System.out.println(top);
+		System.out.println("Node element sucessfully " +val);
 	}
 	
 	public void pop() {
@@ -28,6 +30,19 @@ class StackLinkedList{
 			top = top.next;
 		}
 	}
+	
+	public void displayStack() {
+		if(top == null) {
+			System.out.println("Stack is Empty ");
+		}else {
+			Node temp = top;
+			System.out.println("Stack Elements are: ");
+			while(top!= null) {
+				System.out.println(temp.data + "  ");
+			}
+			System.out.println("Stack is Empty");
+		}
+	}
 }
 public class StackUsingLinkedList {
 
@@ -35,6 +50,10 @@ public class StackUsingLinkedList {
 		
 		StackLinkedList stack = new StackLinkedList();
 		stack.push(11);
+		stack.pop();
+		stack.push(22);
+		stack.push(33);
+		stack.push(44);
 		stack.pop();
 	}
 
